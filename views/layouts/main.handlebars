@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,29 +8,36 @@
    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
+  <body>
+    <header>
+      <h1>Revved Up Reviews</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/myreview">myreview</a>
+      {{! '<a/>' with for test tag will not display in official version }}
+      <a href="/review/1">review1/for test</a>
+      <a href="/new-review">newreview/for test</a>
+      <a href="/edit-review/1">edit-review1/for test</a>
+      <a href="/search-result">search result page/for test</a>
+
+      {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+        <a href="/login">Login</a>
+      {{/if}}
+    </nav>
+    <main>
+      <aside>
+        <h2>Enjoy the galleries!</h2>
+      </aside>
+      <div class="gallery">
+        {{{body}}}
+      </div>
+    </main>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
+      <script src="/js/logout.js"></script>
     {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>Enjoy the galleries!</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
 </html>
