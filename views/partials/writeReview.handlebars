@@ -1,0 +1,122 @@
+<section>
+  <style>
+    .rating input:checked ~ label:before, .rating:not(:checked) >
+    label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+    color: #f9df4a; }
+  </style>
+  <h1
+    class="text-center w-full py-10 text-white bg-gray-600 mb-5 font-bold"
+  >WRITE YOUR REVIEW</h1>
+
+  <div class="flex flex-row justify-between w-[60%]">
+    <select
+      name="seletMake"
+      id="selectMake"
+      class="bg-slate-200 p-2 rounded-lg"
+    >
+      <option value="selectMake">Select Make</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+    </select>
+    <select
+      name="seletMake"
+      id="selectMake"
+      class="bg-slate-200 p-2 rounded-lg"
+    >
+      <option value="selectMake">Select Make</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+    </select>
+    <select
+      name="seletMake"
+      id="selectMake"
+      class="bg-slate-200 p-2 rounded-lg"
+    >
+      <option value="selectMake">Select Make</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col w-[60%] mt-8 gap-6">
+    <div class="flex flex-row">
+
+      <input
+        placeholder="Title"
+        name="title"
+        class="bg-slate-200 focus:border font-semibold rounded-lg outline-none text-2xl border-black pl-2 py-2"
+      />
+      <div class="ml-2 rating flex flex-row-reverse self-start justify-between">
+        <input
+          type="radio"
+          id="star1"
+          name="rating"
+          class="hidden"
+          value="1"
+        /><label
+          class="relative w-10 h-10 cursor-pointer pr-2 checked:text-[#f9df4a] before:content-['\2605'] text-3xl text-slate-200"
+          for="star1"
+        ></label>
+        <input
+          type="radio"
+          id="star2"
+          name="rating"
+          class="hidden"
+          value="2"
+        /><label
+          class="relative w-10 h-10 cursor-pointer pr-2 checked:text-[#f9df4a] before:content-['\2605'] text-3xl text-slate-200"
+          for="star2"
+        ></label>
+        <input
+          type="radio"
+          id="star3"
+          name="rating"
+          class="hidden"
+          value="3"
+        /><label
+          class="relative w-10 h-10 cursor-pointer pr-2 checked:text-[#f9df4a] before:content-['\2605'] text-3xl text-slate-200"
+          for="star3"
+        ></label>
+        <input
+          type="radio"
+          id="star4"
+          name="rating"
+          class="hidden"
+          value="4"
+        /><label
+          class="relative w-10 h-10 cursor-pointer pr-2 checked:text-[#f9df4a] before:content-['\2605'] text-3xl text-slate-200"
+          for="star4"
+        ></label>
+        <input
+          type="radio"
+          id="star5"
+          name="rating"
+          class="hidden"
+          value="5"
+        /><label
+          class="relative w-10 h-10 cursor-pointer pr-2 checked:text-[#f9df4a] before:content-['\2605'] text-3xl text-slate-200"
+          for="star5"
+        ></label>
+      </div>
+    </div>
+    <textarea
+      placeholder="Review"
+      name="content"
+      id=""
+      cols="20"
+      rows="5"
+      class="bg-slate-200 focus:border font-semibold outline-none rounded-lg text-2xl border-black pl-2 py-2"
+    ></textarea>
+
+    <button
+      class="self-center bg-slate-600 text-white rounded-2xl py-1 cursor-pointer w-[40%] hover:bg-emerald-400"
+    >Submit review</button>
+  </div>
+
+</section>
