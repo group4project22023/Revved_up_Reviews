@@ -3,7 +3,7 @@ const router = require("express").Router();
 const { Review, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-// GET all reviews for homepage
+// route to all reviews for homepage
 router.get("/", async (req, res) => {
   try {
     const dbReviewData = await Review.findAll({
