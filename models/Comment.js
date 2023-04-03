@@ -1,9 +1,10 @@
+// Here we define the comment sequilize model
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+class Comment extends Model {}
 
-class Review extends Model {}
-
-Review.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,41 +12,35 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    comment_description: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    post_date: {
-      type: DataTypes.DATEONLY,
+    date_created: {
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'carReview',
+        key: 'id',
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references:{
-        model:'user',
-        key: 'id'
-      }
-    },
-    content: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    
-    car_id: {
-      type: DataTypes.INTEGER,
       references: {
-        model: 'car',
+        model: 'user',
         key: 'id',
       },
     },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'review',
+    modelName: 'comment',
   }
 );
-
-module.exports = Review;
+module.exports = Comment;
