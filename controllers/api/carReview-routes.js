@@ -1,13 +1,13 @@
 // Set up Car Review routes
 const router = require('express').Router();
-const { carReview } = require('../../models');
+const { CarReview } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Define and create Post routes
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newReview = await Review.create({
+    const newReview = await CarReview.create({
       ...req.body,
       user_id: req.session.user_id,
     });

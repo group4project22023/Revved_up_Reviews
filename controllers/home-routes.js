@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 // route to all reviews for homepage
 router.get("/", async (req, res) => {
   try {
-    const dbReviewData = await Review.findAll({
+    const dbReviewData = await CarReview.findAll({
       order: [["post_date", "DESC"]],
       include: [
         {
