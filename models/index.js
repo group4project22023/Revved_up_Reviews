@@ -1,7 +1,7 @@
 // Here we define the index sequilize model
 
 const User = require('./User');
-const Blog = require('./Blog');
+const CarReview = require('./carReview');
 const Comment = require('./Comment');
 
 User.hasMany(CarReview, {
@@ -14,7 +14,7 @@ CarReview.belongsTo(User, {
 });
 
 CarReview.hasMany(Comment,{
-  foreignKey: 'blog_id'
+  foreignKey: 'review_id'
 })
 
 Comment.belongsTo(User, {

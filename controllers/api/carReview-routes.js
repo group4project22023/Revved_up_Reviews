@@ -21,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
 // Define and create delete routes
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const reviewData = await Review.destroy({
+    const reviewData = await CarReview.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
