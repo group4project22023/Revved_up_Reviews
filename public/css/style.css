@@ -1,6 +1,127 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+body {
+  background-color: rgb(81, 134, 174);
+}
+
+.navTitle {
+  font-weight: 1000;
+  font-size: xx-large;
+}
+
+.carReviewBox {
+  margin-top: 8px;
+  border-style: solid;
+}
+
+.carReviewTitle {
+  text-decoration: initial;
+  color: rgb(238, 165, 55);
+}
+
+.carReviewDesc {
+  border-style: solid;
+  margin-bottom: 5px;
+  padding: 2px;
+  background-color: rgb(81, 134, 174);
+}
+
+.carReviewDescMain {
+  font-weight: 700;
+}
+
+.carReviewDescTwo {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.carReviewCreate {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12px;
+  padding: 5px;
+  color: darkkhaki;
+}
+
+.carReviewBoxCont {
+	margin-top: 10px;
+  border-style: solid;
+  background-color: rgb(81, 134, 174);
+}
+
+.formCont {
+  margin-top: 10px;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.commentCont {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 75%;
+  background-color: rgb(81, 134, 174);
+}
+
+.commentOwner {
+  font-size: 14px;
+}
+
+.btnComment {
+  margin-top: 10px;
+}
+
+.commentText {
+  font-weight: bold;
+  padding-top: 10px;
+  background-color: rgb(81, 134, 174);
+}
+
+.commentCont {
+  border-style: dotted;
+}
+
+.headerRow {
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+a:link {
+  color: rgb(200, 23, 182);
+}
+a:visited {
+  color: rgb(41, 76, 182);
+}
+
+a:hover {
+  color: rgb(255, 102, 20);
+}
+
+.login{
+	margin-left: 25px;
+}
+
+.signup{
+	margin-left: 25px;
+}
+
+.form-group{
+	margin-top: 10px;
+}
+
+#carReview-desc{
+  width: 620px;
+  height: 175px;
+}
+
+#body{
+  justify-content: center;
+  align-items: center;
+}
 
 
 /*
