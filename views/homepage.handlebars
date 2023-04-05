@@ -1,0 +1,31 @@
+{{!-- create handlebars review display to be inserted into main --}}
+{{#each carReviews as |carReview|}}
+
+  <div class="row">
+
+    <div class="container carReviewBox">
+			<div class="row  justify-content-center headerRow">
+      <div class="col-8">
+        <h2>
+          <a class="carReviewTitle text-uppercase" href="//{{carReview.id}}">{{carReview.title}}</a>
+        </h2>
+      </div>
+
+      <div class="col-4">
+        <p class="carReviewCreate text-right">Created by
+          {{carReview.user.username}}
+          on
+          {{format_date carReview.date_created}}
+        </p>
+      </div>
+			</div>
+    <div class="carReviewDesc">
+      <p class="text-center carReviewDescMain">
+        {{carReview.carReview}}
+      </p>
+    </div>
+    </div>
+
+  </div>
+
+{{/each}}
