@@ -1,10 +1,13 @@
+
+
+
 const router = require("express").Router();
-//add one more route
-const CarReviewRoutes = require('./carReview-routes');
-const userRoutes = require("./user-routes");
-const userComment = require("./comment-routes");
+const carReviewRoutes = require('./carReviewRoutes');
+const commentRoutes = require("./commentRoutes");
+const userRoutes = require("./userRoutes");
+
+router.use("/carReviews", carReviewRoutes);
+router.use("/comments", commentRoutes);
 router.use("/users", userRoutes);
-router.use("/comments", userComment);
-router.use("/carReviews", CarReviewRoutes);
 
 module.exports = router;
