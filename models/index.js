@@ -14,7 +14,7 @@ CarReview.belongsTo(User, {
 });
 
 CarReview.hasMany(Comment,{
-  foreignKey: 'review_id'
+  foreignKey: 'carReview_id'
 })
 
 Comment.belongsTo(User, {

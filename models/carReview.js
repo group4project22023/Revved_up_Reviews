@@ -15,7 +15,7 @@ carReview.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    carReview: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -40,4 +40,4 @@ carReview.init(
   }
 );
 
-module.exports = CarReview;
+module.exports = carReview;

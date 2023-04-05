@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS carReviews_db;
+DROP DATABASE IF EXISTS carReview_db;
 
-CREATE DATABASE carReviews_db;
+CREATE DATABASE carReview_db;
