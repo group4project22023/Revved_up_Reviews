@@ -1,12 +1,12 @@
 const router = require("express").Router();
 //Assume we have these three model
-const { Review, User, Comment } = require("../models");
+const { CarReview, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // route to all reviews for homepage
 router.get("/", async (req, res) => {
   try {
-    const dbReviewData = await Review.findAll({
+    const dbReviewData = await CarReview.findAll({
       order: [["post_date", "DESC"]],
       include: [
         {
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
 // direct to one review
 router.get("/review/:id", withAuth, async (req, res) => {
   try {
-    const reviewData = await Review.findByPk(req.params.id, {
+    const reviewData = await CarReview.findByPk(req.params.id, {
       include: [
         {
           //comment's data
@@ -261,3 +261,4 @@ router.get("/login", (req, res) => {
 });
 
 module.exports = router;
+
