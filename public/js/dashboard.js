@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
 	event.preventDefault();
 
-	const title = document.querySelector('#review-title').value.trim();
+	const title = document.querySelector('#carReview-title').value.trim();
 
-	const description = document.querySelector('#review-desc').value.trim();
+	const carReview = document.querySelector('#carReview-desc').value.trim();
 
-	if (title && description) {
-		const response = await fetch(`/api/carReview`, {
+	if (title && carReview) {
+		const response = await fetch(`/api/carReviews`, {
 			method: 'POST',
-			body: JSON.stringify({ title, description }),
+			body: JSON.stringify({ title, carReview }),
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -17,31 +17,31 @@ const newFormHandler = async (event) => {
 		if (response.ok) {
 			document.location.replace('/dashboard');
 		} else {
-			alert('Failed to create review');
+			alert('Failed to create CarReview');
 		}
 	}
 };
 
 const delButtonHandler = async (event) => {
-	if (event.target.hasAttribute('review-id')) {
-		const id = event.target.getAttribute('review-id');
+	if (event.target.hasAttribute('data-id')) {
+		const id = event.target.getAttribute('data-id');
 
-		const response = await fetch(`/api/carReview/${id}`, {
+		const response = await fetch(`/api/carReviews/${id}`, {
 			method: 'DELETE',
 		});
 
 		if (response.ok) {
 			document.location.replace('/dashboard');
 		} else {
-			alert('Failed to delete review');
+			alert('Failed to delete carReview');
 		}
 	}
 };
 
 document
-	.querySelector('.new-review-form')
+	.querySelector('.new-carReview-form')
 	.addEventListener('submit', newFormHandler);
 
 document
-	.querySelector('.review-list')
+	.querySelector('.carReview-list')
 	.addEventListener('click', delButtonHandler);
