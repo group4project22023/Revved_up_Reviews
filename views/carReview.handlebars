@@ -8,13 +8,13 @@
 				<p class="carReviewCreate text-right">Created by {{user.username}} on {{format_date date_created}}</p>
 			</div>
 		</div>
-		<p class="text-center carReviewDescTwo">{{carReview}}</p>
+		<p class="text-center carReviewDescTwo">{{description}}</p>
 		</div>	
 </div>
 
 		{{#if logged_in}}
 
-		<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-carReviewid={{id}}>
+		<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-careReviewid={{id}}>
 			<div class="textAreaCont p-2">
 				<textarea id='comment_description' name="comment-body"
 				placeholder="Enter a comment here..."
@@ -26,11 +26,9 @@
 			</div>
 		</form>
 
-		{{comments}}
-
 		{{/if}}
 
-			<h2 class="text-center">Comments</h2>
+		<h2 class="text-center">Comments</h2>
 		{{#each comments as |comment|}}
 		<div class="commentCont">
 			<p class="text-center commentText">{{comment.comment_description}}</p>
