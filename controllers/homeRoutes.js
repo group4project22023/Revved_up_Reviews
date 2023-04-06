@@ -88,7 +88,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       review.get({ plain: true })
     );
 
-    res.render("dashboard", { carReviews, loggedIn: req.session.loggedIn });
+    res.render("dashboard", { carReviews, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -123,7 +123,7 @@ router.get("/edit-review/:id", withAuth, async (req, res) => {
 
     res.render("edit-review", {
       review: reviewData,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
