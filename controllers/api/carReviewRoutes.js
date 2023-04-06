@@ -1,15 +1,16 @@
-// Set up Car Review routes
-const router = require('express').Router();
-const { CarReview } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { CarReview } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-// Define and create Post routes
-
-router.post('/', withAuth, async (req, res) => {
+// Route for creating a new car review
+router.post("/", withAuth, async (req, res) => {
   try {
     const newCarReview = await CarReview.create({
-      ...req.body,
-      user_id: req.session.user_id,
+      title: req.body.title,
+      carmake: req.body.make,
+      carmodel: req.body.model,
+      carReview: req.body.carReview,
+      creator_id: req.session.user_id,
     });
 
     res.status(200).json(newCarReview);
@@ -18,18 +19,18 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Define and create delete routes
-router.delete('/:id', withAuth, async (req, res) => {
+// Route for deleting a car review
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const carReviewData = await CarReview.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        creator_id: req.session.user_id,
       },
     });
 
     if (!carReviewData) {
-      res.status(404).json({ message: '404 carReview ID not found' });
+      res.status(404).json({ message: "No car review found with this id!" });
       return;
     }
 
