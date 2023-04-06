@@ -1,29 +1,36 @@
-{{!-- create handlebars review display to be inserted into main --}}
+{{! create handlebars review display to be inserted into main }}
 {{#each carReviews as |carReview|}}
 
   <div class="row">
 
     <div class="container carReviewBox">
-			<div class="row  justify-content-center headerRow">
-      <div class="col-8">
-        <h2>
-          <a class="carReviewTitle text-uppercase" href="/carReview/{{id}}">{{carReview.title}}</a>
-        </h2>
-      </div>
+      <div class="row justify-content-center headerRow">
+        <div class="col-8">
+          <h2>
+            <a
+              class="carReviewTitle text-uppercase"
+              href="/carReview/{{id}}"
+            >{{carReview.title}}</a>
+          </h2>
+        </div>
 
-      <div class="col-4">
-        <p class="carReviewCreate text-right">Created by
-          {{carReview.user.username}}
-          on
-          {{format_date carReview.date_created}}
+        <div class="col-4">
+          <p class="carReviewCreate text-right">Make:
+            {{carReview.carmake}};&nbsp;&nbsp; Model:
+            {{carReview.carmodel}};<br />
+            Created by
+            {{carReview.creator.username}}
+            on
+            {{format_time carReview.date_reviewcreated}},
+            {{format_date carReview.date_reviewcreated}}
+          </p>
+        </div>
+      </div>
+      <div class="carReviewDesc">
+        <p class="text-center carReviewDescMain">
+          {{truncateContent carReview.carReview 20}}
         </p>
       </div>
-			</div>
-    <div class="carReviewDesc">
-      <p class="text-center carReviewDescMain">
-        {{carReview.carReview}}
-      </p>
-    </div>
     </div>
 
   </div>
