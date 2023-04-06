@@ -22,24 +22,25 @@
     </form>
   </div>
 
-{{carReview}}
-  {{!-- {{#if carReviews.length}}
 
-  <div class="col-md-6 CarReview-list">
+
+  {{#if CarReviews.length}}
+
+  <div class="col-md-6 carReview-list">
     <h3>Current Car Reviews:</h3>
 
-    {{#each carReviews as |carReview|}}
+    {{#each CarReviews as |CarReview|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/carReview/{{carReview.id}}">{{carReview.title}}</a></h4>
+        <h4><a href="/carReview/{{CarReview.id}}">{{CarReview.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-danger" data-id="{{carReview.id}}">DELETE</button>
+        <button class="btn btn-danger" data-id="{{CarReview.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
-  {{/if}} --}}
+  {{/if}}
 </div>
 
 <script src="/js/dashboard.js"></script>
