@@ -23,7 +23,7 @@ Comment.init(
     carReview_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'CarReview',
+        model: 'carReview',
         key: 'id',
       },
     },
@@ -39,7 +39,7 @@ Comment.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: false,
+    // underscored: true,
     modelName: 'comment',
   }
 );

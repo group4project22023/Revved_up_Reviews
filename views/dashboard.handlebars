@@ -22,20 +22,18 @@
     </form>
   </div>
 
-
-
-  {{#if CarReviews.length}}
+  {{#if carReviews.length}}
 
   <div class="col-md-6 carReview-list">
     <h3>Current Car Reviews:</h3>
 
-    {{#each CarReviews as |CarReview|}}
+    {{#each carReviews as |carReview|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/carReview/{{CarReview.id}}">{{CarReview.title}}</a></h4>
+        <h4><a href="/carReview/{{carReview.id}}">{{carReview.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-danger" data-id="{{CarReview.id}}">DELETE</button>
+        <button class="btn btn-danger" data-id="{{carReview.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
