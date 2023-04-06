@@ -13,48 +13,24 @@
 
       <div class="">
         <p class="carReviewCreate">Created by
-          {{carReview.user.username}}
+          {{carReview.creator.username}}
           on
-          {{format_date carReview.date_created}}
+          {{format_time carReview.date_reviewcreated}},
+          {{format_date carReview.date_reviewcreated}}
         </p>
+        <p>Make:
+            {{carReview.carmake}};&nbsp;&nbsp; Model:
+            {{carReview.carmodel}}</p>
       </div>
 			</div>
       <div class="border border-dashed mt-2"></div>
     <div class="mt-2 carReviewDesc">
       <p class="carReviewDescMain">
         Review:<br>
-        {{carReview.carReview}}
+        {{truncateContent carReview.carReview 20}}
       </p>
     </div>
-    <div class="container carReviewBox">
-      <div class="row justify-content-center headerRow">
-        <div class="col-8">
-          <h2>
-            <a
-              class="carReviewTitle text-uppercase"
-              href="/carReview/{{id}}"
-            >{{carReview.title}}</a>
-          </h2>
-        </div>
-
-        <div class="col-4">
-          <p class="carReviewCreate text-right">Make:
-            {{carReview.carmake}};&nbsp;&nbsp; Model:
-            {{carReview.carmodel}};<br />
-            Created by
-            {{carReview.creator.username}}
-            on
-            {{format_time carReview.date_reviewcreated}},
-            {{format_date carReview.date_reviewcreated}}
-          </p>
-        </div>
-      </div>
-      <div class="carReviewDesc">
-        <p class="text-center carReviewDescMain">
-          {{truncateContent carReview.carReview 20}}
-        </p>
-      </div>
-    </div>
+   
 
   </div>
 
