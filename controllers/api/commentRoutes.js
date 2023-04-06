@@ -55,7 +55,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
     if (!commentData) {
-      res.status(404).json({ message: '404 CarReview ID not found' });
+      res.status(404).json({ message: '404 Car Review ID not found' });
       return;
     }
     res.status(200).json(commentData);

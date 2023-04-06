@@ -1,7 +1,7 @@
 const commentFormHandler = async function (event) {
 	event.preventDefault();
 
-	const carReview_id = document.querySelector('.new-comment-form').dataset.carReviewid;
+	const carReview_id = document.querySelector('.new-comment-form').dataset.carReview_id;
 
 	const comment_description = document.querySelector('#comment_description').value.trim();
 

@@ -1,9 +1,11 @@
+// Here we define the blog sequilize model
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class carReview extends Model {}
+class CarReview extends Model {}
 
-carReview.init(
+CarReview.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -35,9 +37,9 @@ carReview.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    // underscored: true,
+    underscored: true,
     modelName: 'carReview',
   }
 );
 
-module.exports = carReview;
+module.exports = CarReview;
