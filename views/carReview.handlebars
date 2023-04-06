@@ -1,3 +1,9 @@
+<script>
+  const config = { googleApiKey: "{{googleApiKey}}", searchEngineId: "{{searchEngineId}}",
+  };
+</script>
+<script src="/js/carReviewImages.js"></script>
+
 <div class="text">
   <div class="container carReviewBoxCont">
     <div class="row headerRow">
@@ -16,9 +22,11 @@
       </div>
     </div>
     <p class="text-center carReviewDescTwo">{{carReview}}</p>
+    <div id="images-container"></div>
   </div>
 </div>
 <hr />
+
 {{#if logged_in}}
 
   <form
@@ -55,4 +63,5 @@
     </div>
   {{/each}}
 </div>
+
 <script src="/js/comments.js"></script>

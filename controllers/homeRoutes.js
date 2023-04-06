@@ -59,11 +59,14 @@ router.get("/carReview/:id", withAuth, async (req, res) => {
       ...carReview,
       logged_in: req.session.logged_in,
       isCreator,
+      googleApiKey: process.env.GOOGLE_API_KEY,
+      searchEngineId: process.env.SEARCH_ENGINE_ID,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 // for dashboard
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
