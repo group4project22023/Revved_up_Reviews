@@ -1,5 +1,7 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+// Here we define the blog sequilize model
+
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class CarReview extends Model {}
 
@@ -17,26 +19,17 @@ CarReview.init(
     },
     carReview: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    date_reviewcreated: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    carmake: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    carmodel: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    creator_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
     },
   },
@@ -45,7 +38,7 @@ CarReview.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "CarReview",
+    modelName: 'carReview',
   }
 );
 

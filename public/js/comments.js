@@ -1,26 +1,25 @@
-const newCommentForm = document.getElementById("new-comment-form");
+const commentFormHandler = async function (event) {
+	event.preventDefault();
 
-newCommentForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
+	const carReview_id = document.querySelector('.new-comment-form').dataset.carReviewid;
 
-  const comment_description = document
-    .getElementById("comment_description")
-    .value.trim();
-  const carReview_id = newCommentForm.getAttribute("data-carReviewid");
+	const comment_description = document.querySelector('#comment_description').value.trim();
 
-  if (!comment_description) {
-    return;
-  }
+	if (comment_description) {
+		await fetch('/api/comments', {
+			method: 'POST',
+			body: JSON.stringify({
+				carReview_id,
+				comment_description,
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		document.location.reload();
+	}
+};
 
-  const response = await fetch("/api/comments", {
-    method: "POST",
-    body: JSON.stringify({ comment_description, carReview_id }),
-    headers: { "Content-Type": "application/json" },
-  });
-
-  if (response.ok) {
-    document.location.reload();
-  } else {
-    alert("Failed to create comment");
-  }
-});
+document
+	.querySelector('.new-comment-form')
+	.addEventListener('submit', commentFormHandler);

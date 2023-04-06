@@ -7,11 +7,10 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const carReviewData = await CarReview.findAll({
-      order: [["date_reviewcreated", "DESC"]],
       include: [
         {
           model: User,
-          as: "creator",
+          attributes: ["username"],
         },
       ],
     });
@@ -33,18 +32,17 @@ router.get("/", async (req, res) => {
 
 // This route will retrieve reviews according to its id
 
-router.get("/carReview/:id", withAuth, async (req, res) => {
+router.get("/carReview/:id", async (req, res) => {
   try {
     const carReviewData = await CarReview.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          as: "creator",
+          attributes: ["username"],
         },
         {
           model: Comment,
           include: [User],
-          order: [["date_commentcreated", "DESC"]],
         },
       ],
     });
@@ -95,82 +93,32 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-//for edit review
-router.get("/edit-review/:id", withAuth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const dbreviewData = await CarReview.findByPk(req.params.id, {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {
+        exclude: ["password"],
+      },
       include: [
         {
-          model: User,
-          as: "creator",
+          model: CarReview,
         },
       ],
     });
 
-    if (!dbreviewData) {
-      res.status(404).json({ message: "No reviews found with this id" });
-      return;
-    }
+    const user = userData.get({
+      plain: true,
+    });
 
-    const reviewData = dbreviewData.get({ plain: true });
-
-    if (reviewData.creator_id !== req.session.user_id) {
-      res
-        .status(403)
-        .json({ message: "You are not authorized to edit this review" });
-      return;
-    }
-
-    res.render("edit-review", {
-      review: reviewData,
-      loggedIn: req.session.loggedIn,
+    res.render("dashboard", {
+      ...user,
+      logged_in: true,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.put("/edit-review/:id", withAuth, async (req, res) => {
-  try {
-    const reviewId = req.params.id;
-    const { title, carReview } = req.body;
-
-    const review = await CarReview.findByPk(reviewId);
-
-    if (!review) {
-      res.status(404).json({ message: "No review found with this id" });
-      return;
-    }
-
-    if (review.creator_id !== req.session.user_id) {
-      res
-        .status(403)
-        .json({ message: "You are not authorized to edit this review" });
-      return;
-    }
-
-    await CarReview.update(
-      {
-        title,
-        carReview,
-        post_date: new Date(),
-      },
-      {
-        where: {
-          id: reviewId,
-        },
-      }
-    );
-
-    res.status(200).json({ message: "Review updated successfully" });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-//for login
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/dashboard");

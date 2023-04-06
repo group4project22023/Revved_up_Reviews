@@ -1,34 +1,52 @@
 // Create Comment routes
 
-const router = require("express").Router();
-const { Comment } = require("../../models");
-const withAuth = require("../../utils/auth");
+const router = require('express').Router();
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-// This route will post and create a new comment
+// Route to retreive all comments from Database array
 
-router.post("/", withAuth, async (req, res) => {
-  try {
-    console.log("Request body:", req.body);
-    console.log("User session:", req.session);
-
-    const newComment = await Comment.create({
-      comment_description: req.body.comment_description,
-      carReview_id: req.body.carReview_id,
-      commenter_id: req.session.user_id,
-      date_commentcreated: new Date(),
+router.get('/', (req,res) => {
+    Comment.findAll({})
+    .then(commentData => res.json(commentData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
     });
+});
 
-    console.log("New comment created:", newComment);
+// This route will retrieve all routes according to an id
+
+router.get('/:id', (req, res) => {
+    Comment.findAll({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(commentData => res.json(commentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+});
+
+// This route will post and create a new comment 
+
+router.post('/', async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
     res.json(newComment);
   } catch (err) {
-    console.error("Error occurred while creating comment:", err);
     res.status(500).json(err);
   }
 });
 
 // This will route the delete function
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {
@@ -37,7 +55,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
     if (!commentData) {
-      res.status(404).json({ message: "404 CarReview ID not found" });
+      res.status(404).json({ message: '404 Car Review ID not found' });
       return;
     }
     res.status(200).json(commentData);

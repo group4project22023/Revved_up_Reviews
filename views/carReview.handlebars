@@ -29,26 +29,19 @@
 
 {{#if logged_in}}
 
-  <form
-    class="new-comment-form formCont d-flex flex-wrap justify-content-center"
-    id="new-comment-form"
-    data-carReviewid={{id}}
-  >
-    <div class="textAreaCont p-2">
-      <textarea
-        id="comment_description"
-        name="comment-body"
-        placeholder="Enter a comment here..."
-        cols="30"
-        rows="2"
-      ></textarea>
-    </div>
-    <div class="btnComment p-2">
-      <button class="button btn btn-success" type="submit">Add Comment</button>
-    </div>
-  </form>
+		{{#if logged_in}}
 
-{{/if}}
+		<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-careReviewid={{id}}>
+			<div class="textAreaCont p-2">
+				<textarea id='comment_description' name="comment-body"
+				placeholder="Enter a comment here..."
+				cols="30"
+				rows="2"></textarea>
+			</div>
+			<div class="btnComment p-2">
+				<button class="button btn btn-success" type="submit">Add Comment</button>
+			</div>
+		</form>
 
 <h2 class="text-center">Comments</h2>
 <div class="comments-container">
