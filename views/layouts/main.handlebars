@@ -4,23 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revved Up Reviews</title>
+    {{!
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
-		
+     <link rel="stylesheet" href="/css/style.css" /> }}
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
 
-  <body>
-    <div class="flex-column justify-space-around">
+  <body class="bg-[#f5f3f3]">
+    <div class="flex-col flex justify-around">
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid navBack">
-          <a class="navbar-brand navTitle" href="/">Revved Up Reviews!!</a>
-          <button
+      <nav
+        class="text-center flex flex-row justify-between px-10 py-8 text-white bg-slate-600 mb-5 text-lg font-bold"
+      >
+        <h1 class="text-white"><a href="/">Revved Up Reviews!!</a></h1>
+        {{! <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -30,8 +33,80 @@
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          </button> }}
+        <div class="" id="navbarSupportedContent">
+          <ul class="flex flex-row gap-4">
+            <li class="">
+              <a
+                class="hover:bg-[#2adc53] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                aria-current="page"
+                href="/"
+              >Home</a>
+            </li>
+            {{#if logged_in}}
+
+              <li class="">
+                <a
+                  class="hover:bg-[#2adc53] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/dashboard"
+                >Dashboard</a>
+              </li>
+
+              <li class="">
+                <a
+                  class="hover:bg-[#2adc53] hover:cursor-pointer active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  id="logout"
+                >Logout</a>
+              </li>
+
+            {{else}}
+              <li class="">
+                <a
+                  class="hover:bg-[#2adc53] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/login"
+                >Login</a>
+              </li>
+
+              <li class="">
+                <a
+                  class="hover:bg-[#2adc53] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/signUp"
+                >Sign Up</a>
+              </li>
+            {{/if}}
+
+          </ul>
+        </div>
+      </nav>
+
+
+      <main class="flex flex-col ">
+        {{{body}}}
+      </main>
+      <footer>
+      </footer>
+    </div>
+
+
+
+
+
+
+
+
+      {{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid navBack"> 
+           <a class="navbar-brand navTitle" href="/">Revved Up Reviews!!</a>  <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>  <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
@@ -58,22 +133,14 @@
               {{/if}}
 
             </ul>
-          </div>
-        </div>
-      </nav>
+          </div>  </div>
+      </nav> --}}
 
-      <main class="container">
-        {{{body}}}
-      </main>
-      <footer>
-      </footer>
-    </div>
-
-    <script
+    {{! <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
-    ></script>
+    ></script> }}
 
     {{#if logged_in}}
       <script src="/js/logout.js"></script>

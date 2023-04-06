@@ -1,6 +1,32 @@
-{{!-- create handlebars form to be inserted into main --}}
+{{! create handlebars form to be inserted into main }}
 
-<div class="flex-row justify-content-center align-items-center">
+<form class="flex flex-col login-form">
+
+<div
+  class="bg-white shadow-lg mt-20 self-center rounded-lg flex flex-col justify-center p-20 gap-5"
+>
+  <input
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="User name"
+    id="username-login"
+    type="text"
+  />
+  <input
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="Password"
+    id="password-login"
+    type="password"
+  />
+  <button
+  type="submit"
+    class="bg-gray-600 text-white rounded-lg p-2 hover:bg-green-400"
+  >Login</button>
+  <p>No account?
+    <a href="/signUp" class="text-blue-500 hover:text-blue-800">Create Account</a></p>
+</div>
+</form>
+
+{{! <div class="flex-row justify-content-center align-items-center">
   <div class="col justify-content-center">
     <h2 class="login">Login</h2>
     <form class="form login-form">
@@ -18,6 +44,6 @@
       </div>
     </form>
   </div>
-</div>
+</div> }}
 
 <script src="./js/login.js"></script>
