@@ -50,6 +50,70 @@
     </form>
 
   {{/if}}
+<script>
+  const config = { googleApiKey: "{{googleApiKey}}", searchEngineId: "{{searchEngineId}}",
+  };
+</script>
+<script src="/js/carReviewImages.js"></script>
+
+<div class="text">
+  <div class="container carReviewBoxCont">
+    <div class="row headerRow">
+      <div class="col-8">
+        <h2 class="carReviewTitle text-uppercase">{{title}}</h2>
+      </div>
+      <div class="col-4">
+        <p class="carReviewCreate text-right">Make:
+          {{carmake}};&nbsp;&nbsp; Model:
+          {{carmodel}};<br />
+          Created by
+          {{creator.username}}
+          on
+          {{format_time date_reviewcreated}},
+          {{format_date date_reviewcreated}}</p>
+      </div>
+    </div>
+    <p class="text-center carReviewDescTwo">{{carReview}}</p>
+    <div id="images-container"></div>
+  </div>
+</div>
+<hr />
+
+{{#if logged_in}}
+
+  <form
+    class="new-comment-form formCont d-flex flex-wrap justify-content-center"
+    id="new-comment-form"
+    data-carReviewid={{id}}
+  >
+    <div class="textAreaCont p-2">
+      <textarea
+        id="comment_description"
+        name="comment-body"
+        placeholder="Enter a comment here..."
+        cols="30"
+        rows="2"
+      ></textarea>
+    </div>
+    <div class="btnComment p-2">
+      <button class="button btn btn-success" type="submit">Add Comment</button>
+    </div>
+  </form>
+
+{{/if}}
+
+<h2 class="text-center">Comments</h2>
+<div class="comments-container">
+  {{#each comments as |comment|}}
+    <div class="commentCont">
+      <p class="text-center commentText">{{comment.comment_description}}</p>
+      <p class="text-center commentOwner"><span>~</span>Created by
+        {{comment.user.username}}
+        on
+        {{format_time date_commentcreated}},
+        {{format_date date_commentcreated}}<span>~</span></p>
+    </div>
+  {{/each}}
 </div>
 
 <script src="/js/comments.js"></script>
