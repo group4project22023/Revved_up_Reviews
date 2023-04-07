@@ -88,7 +88,15 @@ router.get("/dashboard", withAuth, async (req, res) => {
       review.get({ plain: true })
     );
 
-    res.render("dashboard", { carReviews, logged_in: req.session.logged_in });
+    // Get the user information
+    const userData = await User.findByPk(userId);
+
+    // Render the dashboard view with the username
+    res.render("dashboard", {
+      carReviews,
+      logged_in: req.session.logged_in,
+      username: userData.username, // Add the username here
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
