@@ -21,7 +21,7 @@
             name="carReview-title"
             placeholder="Car Review Title"
           />
-          <input
+          <select
             class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
         
           type="text"
@@ -29,7 +29,11 @@
           name="carReview-make"
           placeholder="Car Make"
           />
-          <input
+            {{#each makes}}
+              <option value="{{capitalize this}}">{{capitalize this}}</option>
+            {{/each}}
+          </select>
+          <select
             class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
         
           type="text"
@@ -37,6 +41,10 @@
           name="carReview-model"
           placeholder="Car model"
           />
+          {{#each cars}}
+            <option value="{{capitalize this.model}}">{{capitalize this.model}}</option>
+          {{/each}}
+          </select>
         </div>
 
         <div class="form-group">
