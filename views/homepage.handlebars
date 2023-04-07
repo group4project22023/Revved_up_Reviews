@@ -12,11 +12,7 @@
       </div>
 
       <div class="">
-        <p class="carReviewCreate">Created by
-          {{carReview.creator.username}}
-          on
-          {{format_date carReview.date_reviewcreated}}
-        </p>
+        
         <p>Make:
             {{carReview.carmake}};&nbsp;&nbsp; Model:
             {{carReview.carmodel}}</p>
@@ -28,6 +24,11 @@
         Review:<br>
         {{truncateContent carReview.carReview}}
       </p>
+<p class="carReviewCreate text-right italic">Created by
+          {{carReview.creator.username}}
+          on
+          {{format_date carReview.date_reviewcreated}}
+        </p>
     </div>
    
 
