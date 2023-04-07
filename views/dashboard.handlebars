@@ -1,53 +1,14 @@
+
 <div class="bg-white w-[80%] self-center shadow-lg rounded-lg px-6 py-4">
   <div class="text-4xl font-semibold">
+    <h2>Welcome, {{username}}!</h2>
 <div class="row">
   <div class="col-auto">
-    <h2><span></span>Welcome, {{user.username}}!<span></span></h2>
+    <h2><span></span>Welcome, {{username}}!<span></span></h2>
   </div>
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Car Review:</h3>
-
-    <form class="new-carReview-form">
-      <div class="form-group">
-        <input
-          class="form-input"
-          type="text"
-          id="carReview-title"
-          name="carReview-title"
-          placeholder="carReview Title"
-        />
-        <input
-          class="form-input"
-          type="text"
-          id="make"
-          name="carReview-make"
-          placeholder="Car Make"
-        />
-        <input
-          class="form-input"
-          type="text"
-          id="model"
-          name="carReview-model"
-          placeholder="Car Model"
-        />
-      </div>
-
-      <div class="form-group">
-        <textarea
-          class="form-input"
-          id="carReview-desc"
-          name="carReview-desc"
-          placeholder="carReview Content"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
 
   <div class="border border-dashed my-4"></div>
   
@@ -63,6 +24,22 @@
             id="carReview-title"
             name="carReview-title"
             placeholder="Car Review Title"
+          />
+          <input
+            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+        
+          type="text"
+          id="make"
+          name="carReview-make"
+          placeholder="Car Make"
+          />
+          <input
+            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+        
+          type="text"
+          id="model"
+          name="carReview-model"
+          placeholder="Car model"
           />
         </div>
 
