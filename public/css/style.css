@@ -121,6 +121,12 @@ a:hover {
 	margin-top: 10px;
 }
 
+.signIn{
+  font-size: large;
+  font-weight: bold;
+  align-items: center;
+}
+
 #carReview-desc{
   width: 620px;
   height: 175px;
