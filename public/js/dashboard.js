@@ -6,7 +6,7 @@ const carModelHandler = () => {
 
   //If any values are hidden
   if (hiddenValues.length > 0) {
-    for (let i=0; i<hiddenValues.length; i++) {
+    for (let i = 0; i < hiddenValues.length; i++) {
       //Add each value back to display
       modelList.add(hiddenValues[i]);
     }
@@ -14,7 +14,7 @@ const carModelHandler = () => {
     hiddenValues = [];
   }
 
-  for (let i=0; i<modelList.length; i++) {
+  for (let i = 0; i < modelList.length; i++) {
     //Remove models not associated to the selected make
     if (modelList[i].dataset.make !== make) {
       hiddenValues.push(modelList[i]); //Save deleted values to add back on selection change
@@ -22,7 +22,7 @@ const carModelHandler = () => {
       i--; //Account for removed value and check same index again for new value
     }
   }
-}
+};
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -67,11 +67,16 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const editButtonHandler = async (event) => {
+  if (event.target.hasAttribute("edit-id")) {
+    const id = event.target.getAttribute("edit-id");
+    document.location.replace(`/edit-review/${id}`);
+  }
+};
+
 carModelHandler();
 
-document
-  .querySelector("#make")
-  .addEventListener("change", carModelHandler);
+document.querySelector("#make").addEventListener("change", carModelHandler);
 
 document
   .querySelector(".new-carReview-form")
@@ -80,3 +85,7 @@ document
 document
   .querySelector(".carReview-list")
   .addEventListener("click", delButtonHandler);
+
+document
+  .querySelector(".carReview-list")
+  .addEventListener("click", editButtonHandler);
