@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href=""> <https://github.com/group4project22023/Revved_up_Reviews>
-    <img src="" alt="Logo" width="200" height="200"> </assets/images/logo.jpg>
+    <img src="" alt="Logo" width="200" height="200"> </public/assets/images/logo.jpg>
   </a>
 
   <h3 align="center">Revved Up Reviews</h3>
