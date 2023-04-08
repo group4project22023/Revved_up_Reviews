@@ -179,6 +179,6 @@ Yingge Hu
 ## Acknowledgments
 
 
-* 
+* https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
