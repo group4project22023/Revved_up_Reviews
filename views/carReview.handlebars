@@ -3,6 +3,14 @@
   const config = { googleApiKey: "{{googleApiKey}}", searchEngineId: "{{searchEngineId}}",
   };
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carMake = "{{carmake}}";
+    const carModel = "{{carmodel}}";
+    loadImages(carMake, carModel);
+  });
+</script>
+
 <script src="/js/carReviewImages.js"></script>
  <style>
       img {

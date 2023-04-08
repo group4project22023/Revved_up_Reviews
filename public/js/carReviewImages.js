@@ -16,14 +16,7 @@ async function fetchGoogleImage(searchQuery) {
   }
 }
 
-async function loadImages() {
-  const carMake = document
-    .querySelector(".carReviewCreate")
-    .textContent.match(/Make:\s*([^;]+)/)[1];
-  // This part uses a pattern to find the text that starts with "Make:", followed by any spaces, and then captures the text until it reaches a semicolon (;). The captured text is enclosed within parentheses ([^;]+).
-  const carModel = document
-    .querySelector(".carReviewCreate")
-    .textContent.match(/Model:\s*([^;]+)/)[1];
+async function loadImages(carMake, carModel) {
   const searchQueryBase = `${carMake} ${carModel}`.trim();
 
   console.log("carMake:", carMake);
@@ -63,5 +56,3 @@ async function loadImages() {
     }
   }
 }
-
-document.addEventListener("DOMContentLoaded", loadImages);
