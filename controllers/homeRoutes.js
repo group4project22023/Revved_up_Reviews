@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, CarReview, Comment } = require("../models");
 const withAuth = require("../utils/auth");
-const carData = require("../utils/carData")
+const carData = require("../utils/carData.js")
 // This route will display all posts on homepage
 
 router.get("/", async (req, res) => {
@@ -87,7 +87,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const carReviews = dbcarReviewData.map((review) =>
       review.get({ plain: true })
     );
-    console.log(carData.cars);
     // Get the user information
     const userData = await User.findByPk(userId);
     // Render the dashboard view with the username
