@@ -19,18 +19,12 @@ async function fetchGoogleImage(searchQuery) {
 async function loadImages(carMake, carModel) {
   const searchQueryBase = `${carMake} ${carModel}`.trim();
 
-  console.log("carMake:", carMake);
-  console.log("carModel:", carModel);
-
   if (searchQueryBase) {
     try {
       const exteriorImage = await fetchGoogleImage(searchQueryBase);
       const interiorImage = await fetchGoogleImage(
         searchQueryBase + " interior"
       );
-
-      console.log("exteriorImage:", exteriorImage);
-      console.log("interiorImage:", interiorImage);
 
       const imagesContainer = document.getElementById("images-container");
 
