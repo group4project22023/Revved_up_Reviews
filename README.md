@@ -5,14 +5,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href=""> <!-- TODO add repo link -->
-    <img src="" alt="Logo" width="200" height="200"> <!-- TODO add src-->
+  <a href=""> <https://github.com/group4project22023/Revved_up_Reviews>
+    <img src="" alt="Logo" width="200" height="200"> </assets/images/logo.jpg>
   </a>
 
   <h3 align="center">Revved Up Reviews</h3>
 
   <p align="center">
-    <!-- TODO add slogan -->
+    <Revved Up Reviews: Ignite Your Passion for the Drive>
   </p>
 </div>
 
@@ -45,9 +45,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![]() <!-- TODO add screenshot of project -->
+![image](https://user-images.githubusercontent.com/100619060/230700209-03eced27-7b7d-4421-9d2d-09797a613294.png)
 
-<!-- TODO add description of project -->
+Reved Up Reviews is a website that allows users to pose a review of any car they own, letting other users know the pros and cons regarding their vehical. Our site can be used by consumers researching their next car or by users that want to shair their experiences.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
