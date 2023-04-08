@@ -30,7 +30,7 @@
           placeholder="Car Make"
           />
             {{#each makes}}
-              <option value="{{capitalize this}}">{{capitalize this}}</option>
+              <option value="{{this}}">{{capitalize this}}</option>
             {{/each}}
           </select>
           <select
@@ -42,7 +42,7 @@
           placeholder="Car model"
           />
           {{#each cars}}
-            <option value="{{capitalize this.model}}">{{capitalize this.model}}</option>
+            <option value="{{this.model}}" data-make="{{this.make}}">{{capitalize this.model}}</option>
           {{/each}}
           </select>
         </div>

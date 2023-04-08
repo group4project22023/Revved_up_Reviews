@@ -1,3 +1,29 @@
+let hiddenValues = [];
+
+const carModelHandler = () => {
+  const make = document.querySelector("#make").value;
+  const modelList = document.querySelector("#model");
+
+  //If any values are hidden
+  if (hiddenValues.length > 0) {
+    for (let i=0; i<hiddenValues.length; i++) {
+      //Add each value back to display
+      modelList.add(hiddenValues[i]);
+    }
+    //Clear hidden values list
+    hiddenValues = [];
+  }
+
+  for (let i=0; i<modelList.length; i++) {
+    //Remove models not associated to the selected make
+    if (modelList[i].dataset.make !== make) {
+      hiddenValues.push(modelList[i]); //Save deleted values to add back on selection change
+      modelList.options[i].remove();
+      i--; //Account for removed value and check same index again for new value
+    }
+  }
+}
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -40,6 +66,12 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+
+carModelHandler();
+
+document
+  .querySelector("#make")
+  .addEventListener("change", carModelHandler);
 
 document
   .querySelector(".new-carReview-form")
