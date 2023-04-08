@@ -28,14 +28,14 @@
           <div class="flex flex row justify-around" id="images-container"></div>
   </div>
 
-  <div class="mx-2 mb-10">
+  <div class="mx-2 mb-10 flex col justify-center">
 
-    <h2 class="font-semibold text-xl mt-4">Comments</h2>
+    <h2 class="font-semibold text-xl mt-4 flex col justify-center">Comments</h2>
     {{#each comments as |comment|}}
       <div
-        class="commentCont bg-[#f5f3f3] flex flex-col gap-2 m-4 p-2 rounded-lg"
+        class="commentCont bg-[#f5f3f3] flex flex-col justify-center gap-2 m-4 p-2 rounded-lg"
       >
-        <p class="text-center commentText">{{comment.comment_description}}</p>
+        <p class="commentText">{{comment.comment_description}}</p>
         <p class="commentOwner text-center commentOwner text-right"><span>~</span>Created by
           {{comment.user.username}}
           on
