@@ -10,8 +10,8 @@
     loadImages(carMake, carModel);
   });
 </script>
-
 <script src="/js/carReviewImages.js"></script>
+
  <style>
       img {
         max-width: 300px;
@@ -20,31 +20,31 @@
 
 <div class="bg-white w-[80%] shadow-lg self-center rounded-lg mx-6 py-2 px-4">
 
-  <div class="flex flex-col gap-4 mx-6 text rounded-lg p-2 carReviewBoxCont">
-    <h2 class="text-2xl text-center font-semibold carReviewTitle">{{title}}</h2>
-    <p class="carReviewDescTwo">{{carReview}}
-      
+  <div class="flex flex-col gap-4 mx-6 text rounded-lg p-6 carReviewBoxCont bg-slate-200">
+    <h2 class="text-2xl text-center py-2 rounded-lg font-semibold carReviewTitle bg-[rgb(186,213,238)]">{{title}}</h2>
+   <div class="flex flex-row justify-between"><p>Make: <b>{{carmake}}</b> </p><p>Model: <b> {{carmodel}}</b></p></div>
+    <p class="">{{carReview}}
     </p>
     
-    <p class="text-right carReviewCreate">-Created by
+    <p class="text-right italic carReviewCreate">-Created by
   {{creator.username}}
   on
   {{format_time date_reviewcreated}},
-      {{format_date date_reviewcreated}} - Make: {{carmake}}; Model: {{carmodel}}
+      {{format_date date_reviewcreated}} 
 </p>
 
-          <div class="flex flex row justify-around" id="images-container"></div>
+          <div class="flex flex-row justify-around" id="images-container"></div>
   </div>
 
-  <div class="mx-2 mb-10 flex col justify-center">
-
     <h2 class="font-semibold text-xl mt-4 flex col justify-center">Comments</h2>
+  <div class="mx-2 mb-10 flex flex-row flex-wrap justify-center">
+
     {{#each comments as |comment|}}
       <div
-        class="commentCont bg-[#f5f3f3] flex flex-col justify-center gap-2 m-4 p-2 rounded-lg"
+        class="commentCont bg-slate-200 flex flex-col justify-center gap-2 m-4 p-4 rounded-lg"
       >
-        <p class="commentText">{{comment.comment_description}}</p>
-        <p class="commentOwner text-center commentOwner text-right"><span>~</span>Created by
+        <p class="commentText pl-4 pb-1 rounded-lg">{{comment.comment_description}}</p>
+        <p class="commentOwner text-right"><span>~</span>Created by
           {{comment.user.username}}
           on
           {{format_time date_commentcreated}},

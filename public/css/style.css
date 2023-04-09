@@ -7,14 +7,16 @@
 }
 
 body {
-  background-color: var(--background)
-  
+  background-color: var(--background)  
 }
 
 .navTitle {
-  font-weight: 1000;
+  font-weight: bolder;
   font-size: 38px;
-  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
 
 .carReviewBox {
@@ -22,17 +24,17 @@ body {
   border-style: solid;
 }
 
-.carReviewTitle {
+/* .carReviewTitle {
   text-decoration: initial;
   color: rgb(238, 104, 55);
-}
+} */
 
-.carReviewDesc {
+/* .carReviewDesc {
   border-style: solid;
   margin-bottom: 5px;
   padding: 2px;
   background-color: var(--background)
-}
+} */
 
 .carReviewDescMain {
   font-weight: 700;
@@ -40,16 +42,16 @@ body {
 
 .carReviewDescTwo {
   font-size: 25px;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
-.carReviewCreate {
+/* .carReviewCreate {
   font-weight: bold;
   font-style: italic;
   font-size: 12px;
   padding: 5px;
   color: darkkhaki;
-}
+} */
 
 .carReviewBoxCont {
 	margin-top: 10px;
@@ -91,10 +93,10 @@ body {
   border-style: dotted;
 }
 
-.headerRow {
+/* .headerRow {
   background-color: rgb(253, 221, 221);
   margin-bottom: 10px;
-}
+} */
 
 a:link {
   color: rgb(220, 89, 19);
@@ -106,7 +108,7 @@ a:visited {
 
 a:hover {
   color: rgb(32, 104, 237);
-  background-color:rgb(65, 225, 43)
+  /* background-color:rgb(65, 225, 43) */
 }
 
 .login{

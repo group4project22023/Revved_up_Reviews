@@ -9,14 +9,14 @@
   </head>
 
   <body class="bg-[#f5f3f3]">
-    <div class="flex-col flex justify-around">
+    {{!-- <div class="flex-col flex justify-around"> --}}
 
       <nav
         class="text-center flex flex-row justify-between px-10 py-8 text-white bg-slate-600 mb-5 text-lg font-bold"
       >
-        <h1 class="text-white items-start navTitle">
+        <h1 class="text-white navTitle">
           <img src="/assets/images/logo.jpg" class="flex flex-row items-start w-16 h-16" alt="Revved Up Reviews Logo">
-          <a href="/">Revved Up Reviews!!</a>
+          <a class="md:text-2xl" href="/">Revved Up Reviews!!</a>
         </h1>
 
        
@@ -31,11 +31,11 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button> }}
-        <div class="" id="navbarSupportedContent">
-          <ul class="flex flex-row gap-4">
+        <div class="self-center" id="navbarSupportedContent">
+          <ul class="flex flex-row gap-4 md:gap-1">
             <li class="">
               <a
-                class="px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                 aria-current="page"
                 href="/"
               >Home</a>
@@ -44,14 +44,14 @@
 
               <li class="">
                 <a
-                  class="hover:bg-[#2adc53] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
                   href="/dashboard"
                 >Dashboard</a>
               </li>
 
               <li class="">
                 <a
-                  class="hover:bg-[#2adc53] hover:cursor-pointer active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   id="logout"
                 >Logout</a>
               </li>
@@ -59,14 +59,14 @@
             {{else}}
               <li class="">
                 <a
-                  class="px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/login"
                 >Login</a>
               </li>
 
               <li class="">
                 <a
-                  class="px-6 py-1 rounded-lg"
+                  class= "md:px-2 hover:bg-[#e6cb18] cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/signUp"
                 >Sign Up</a>
               </li>
@@ -77,12 +77,13 @@
       </nav>
 
 
-      <main class="flex flex-col ">
+      <main class="flex flex-col">
         {{{body}}}
       </main>
-      <footer>
+    {{!-- </div> --}}
+      <footer class=" w-full py-6 text-center self-baseline bg-slate-800 text-white mt-4 bottom-0">
+        Made with ❤ by TEAM-4
       </footer>
-    </div>
 
 
     {{#if logged_in}}

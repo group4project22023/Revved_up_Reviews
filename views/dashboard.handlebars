@@ -15,14 +15,14 @@
       <form class="form new-carReview-form flex flex-col gap-4">
         <div class="form-group flex flex-row space-x-20 w-full self-center">
           <input
-            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+            class="form-input text-[1.2rem] bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
             type="text"
             id="carReview-title"
             name="carReview-title"
             placeholder="Car Review Title"
           />
           <select
-            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+            class="form-input text-[1.2rem] cursor-pointer bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
         
           type="text"
           id="make"
@@ -34,7 +34,7 @@
             {{/each}}
           </select>
           <select
-            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+            class="form-input text-[1.2rem] bg-[#f5f3f3] cursor-pointer rounded-lg p-1 px-2 w-full"
         
           type="text"
           id="model"
@@ -49,7 +49,7 @@
 
         <div class="form-group flex grow">
           <textarea
-            class="form-input bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
+            class="form-input text-[1.2rem] bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
             id="carReview-desc"
             name="carReview-desc"
             placeholder="Please review your vehicle here, share what you like, what you didnt and your personal expiriences!"
@@ -59,7 +59,7 @@
         <div class="form-group flex flex-row justify-center">
           <button
             type="submit"
-            class="bg-gray-600 text-white px-10 rounded-xl p-2 hover:bg-green-400 btn btn-primary"
+            class="bg-gray-600 text-white text-[1.2rem] px-10 rounded-xl p-2 hover:bg-green-400 btn btn-primary"
           >Create</button>
         </div>
       </form>
@@ -74,17 +74,17 @@
         {{#each carReviews as |carReview|}}
           <div class="flex flex-row justify-between px-10 rounded-lg bg-[#f5f3f3] py-4">
             <div class="">
-              <h4><a
+              <p><a class="text-[1.7rem]"
                   href="/carReview/{{carReview.id}}"
-                >{{carReview.title}}</a></h4>
+                >{{carReview.title}}</a></p>
             </div>
             <div class="">
               <button
-                class="btn bg-green-500  hover:bg-green-700 px-4 py-1 rounded-lg text-white editbtn"
+                class="btn bg-green-500 text-[1.2rem] hover:bg-green-700 px-4 py-1 rounded-lg text-white editbtn"
                 edit-id="{{carReview.id}}"
               >EDIT</button>
               <button
-                class="btn btn-danger bg-red-500  hover:bg-red-700 px-4 py-1 rounded-lg text-white"
+                class="btn btn-danger text-[1.2rem] bg-red-500  hover:bg-red-700 px-4 py-1 rounded-lg text-white"
                 data-id="{{carReview.id}}"
               >DELETE</button>
             </div>
