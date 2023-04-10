@@ -5,14 +5,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href=""> <https://github.com/group4project22023/Revved_up_Reviews>
+![image](https://user-images.githubusercontent.com/100619060/231015246-dc5e941a-31b0-4ea3-8961-ac0215d560ca.png)
     <img src="" alt="Logo" width="200" height="200"> </public/assets/images/logo.jpg>
   </a>
 
   <h3 align="center">Revved Up Reviews</h3>
 
   <p align="center">
-    <Revved Up Reviews: Ignite Your Passion for the Drive>
+    Revved Up Reviews: Ignite Your Passion for the Drive
   </p>
 </div>
 
