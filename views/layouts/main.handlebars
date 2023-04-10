@@ -1,37 +1,94 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revved Up Reviews</title>
+    <link rel="stylesheet" href="/css/style.css" /> 
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<body>
-  <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
+  <body class="bg-[#f5f3f3]">
+    {{!-- <div class="flex-col flex justify-around"> --}}
+
+      <nav
+        class="text-center flex flex-row max-[426px]:flex-col max-[426px]:items-center justify-between px-10 max-[426px]:px-6 py-8 max-[426px]:py-4 text-white max-[426px]:gap-6 bg-slate-600 mb-5 max-[426px]:mb-0 text-lg font-bold"
+      >
+        <div class="text-white navTitle">
+          <img src="/assets/images/logo.jpg" class="flex flex-row items-start w-16 h-16" alt="Revved Up Reviews Logo">
+          <a class="md:text-2xl max-[426px]:text-lg" href="/">Revved Up Reviews!!</a>
+        </div>
+
+       
+        {{! <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button> }}
+        <div class="self-center" id="navbarSupportedContent">
+          <ul class="flex flex-row gap-4 md:gap-1 max-[426px]:gap-1">
+            <li class="">
+              <a
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                aria-current="page"
+                href="/"
+              >Home</a>
+            </li>
+            {{#if logged_in}}
+
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
+                  href="/dashboard"
+                >Dashboard</a>
+              </li>
+
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  id="logout"
+                >Logout</a>
+              </li>
+
+            {{else}}
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/login"
+                >Login</a>
+              </li>
+
+              <li class="">
+                <a
+                  class= "md:px-2 hover:bg-[#e6cb18] max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/signUp"
+                >Sign Up</a>
+              </li>
+            {{/if}}
+
+          </ul>
+        </div>
+      </nav>
+
+
+      <main class="flex flex-col">
+        {{{body}}}
+      </main>
+    {{!-- </div> --}}
+      <footer class=" w-full py-6 text-center self-baseline bg-slate-800 text-white mt-4 max-[426px]:mt-0 bottom-0">
+        Made with ❤ by TEAM-4
+      </footer>
+
+
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
     {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>Enjoy the galleries!</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
 </html>

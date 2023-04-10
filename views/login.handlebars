@@ -1,40 +1,50 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
+{{! create handlebars form to be inserted into main }}
+
+<form class="flex flex-col login-form mb-[18.5vh] max-[426px]:mb-0">
+
+<div
+  class="bg-white shadow-lg mt-20 max-[426px]:mt-0 max-[426px]:h-[77vh] max-[426px]:w-[100vw] max-[426px]:shadow-none self-center rounded-lg flex flex-col justify-center p-20 max-[426px]:p-4 gap-5"
+>
+<p class="signIn flex justify-center content-start">Please Sign In!</p>
+  <input
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="User name"
+    id="username-login"
+    type="text"
+  />
+  <input
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="Password"
+    id="password-login"
+    type="password"
+  />
+  <button
+  type="submit"
+    class="bg-gray-600 text-white rounded-lg p-2 hover:bg-green-400"
+  >Login</button>
+  <p class="text-center">No account?
+    <a href="/signUp" class="text-blue-500 hover:text-blue-800">Create Account</a></p>
+</div>
+</form>
+
+{{! <div class="flex-row justify-content-center align-items-center">
+  <div class="col justify-content-center">
+    <h2 class="login">Login</h2>
     <form class="form login-form">
       <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <input class="form-input" type="text" placeholder="Username" id="username-login" />
       </div>
       <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input class="form-input" type="password" placeholder="Password" id="password-login" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+      <div>
+        <a href="/signUp">Sign Up Instead</a>
       </div>
     </form>
   </div>
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
+</div> }}
 
 <script src="./js/login.js"></script>

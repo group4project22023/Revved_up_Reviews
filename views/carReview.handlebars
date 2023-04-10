@@ -1,0 +1,73 @@
+<script src="/js/comments.js"></script> 
+<script>
+  const config = { googleApiKey: "{{googleApiKey}}", searchEngineId: "{{searchEngineId}}",
+  };
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carMake = "{{carmake}}";
+    const carModel = "{{carmodel}}";
+    loadImages(carMake, carModel);
+  });
+</script>
+<script src="/js/carReviewImages.js"></script>
+
+ <style>
+      img {
+        max-width: 300px;
+      }
+    </style>
+
+<div class="bg-white w-[80%] max-[426px]:w-[100%] shadow-lg self-center rounded-lg mx-6 py-2 px-4 max-[426px]:p-1">
+
+  <div class="flex flex-col gap-4 mx-6 text rounded-lg p-6 max-[426px]:m-1 max-[426px]:p-2 carReviewBoxCont bg-slate-200">
+    <h2 class="text-2xl text-center py-2 rounded-lg font-semibold carReviewTitle bg-[rgb(186,213,238)]">{{title}}</h2>
+   <div class="flex flex-row justify-between"><p>Make: <b>{{carmake}}</b> </p><p>Model: <b> {{carmodel}}</b></p></div>
+    <p class="text-xl font-serif">{{carReview}}
+    </p>
+    
+
+          <div class="flex flex-row justify-around md:flex-col md:gap-6 max-[426px]:flex-col" id="images-container"></div>
+    <p class="text-right italic carReviewCreate">-Created by
+  {{creator.username}}
+  on
+  {{format_time date_reviewcreated}},
+      {{format_date date_reviewcreated}} 
+</p>
+  </div>
+
+    <h2 class="font-semibold text-xl mt-4 flex col justify-center max-[426px]:mb-4">Comments</h2>
+  <div class="mx-2 mb-10 max-[426px]:w-[100vw] max-[426px]:m-0 max-[426px]:p-0 max-[426px]:gap-4 flex flex-row max-[426px]:flex-col max-[426px]:items-center flex-wrap justify-center">
+
+    {{#each comments as |comment|}}
+      <div class="commentCont bg-slate-200 flex flex-col justify-center gap-2 m-4 p-4 max-[426px]:m-0 rounded-lg">
+        <p class="commentText pl-4 pb-1 rounded-lg">{{comment.comment_description}}</p>
+        <p class="commentOwner text-right"><span>~</span>Created by
+          {{comment.user.username}}
+          on
+          {{format_time date_commentcreated}},
+        {{format_date date_commentcreated}}<span>~</span></p>
+      </div>
+    {{/each}}
+  </div>
+  {{#if logged_in}}
+    <form
+  class="new-comment-form px-6 max-[426px]:p-1 max-[426px]:m-0 flex flex-col justify-between mt-10"  id="new-comment-form"
+  data-carReviewid={{id}}
+>
+
+      <div class="textAreaCont self-center max-[426px]:mt-4">
+        <textarea
+          id="comment_description"
+          name="comment-body"
+          placeholder="Enter a comment here..."
+          rows="4"
+		      class="bg-[#f5f3f3] w-[50vw] self-center p-2 rounded-lg max-[426px]:m-0 max-[426px]:w-[90vw]"
+        ></textarea>
+      </div>
+      <div class="btnComment self-center my-4 p-2 px-6 bg-slate-600 text-white rounded-lg hover:bg-green-400">
+        <button class="button btn btn-success" type="submit">Add Comment</button>
+      </div>
+    </form>
+           
+  {{/if}}

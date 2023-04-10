@@ -1,13 +1,34 @@
-const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+// Here we define the index sequilize model
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+const User = require("./User");
+const CarReview = require("./carReview");
+const Comment = require("./Comment");
+
+User.hasMany(CarReview, {
+  foreignKey: "creator_id",
+  onDelete: "CASCADE",
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+CarReview.belongsTo(User, {
+  foreignKey: "creator_id",
+  as: "creator",
 });
 
-module.exports = { User, Gallery, Painting };
+CarReview.hasMany(Comment, {
+  foreignKey: "carReview_id",
+});
+
+Comment.belongsTo(CarReview, {
+  foreignKey: "carReview_id",
+});
+
+Comment.belongsTo(User, {
+  foreignKey: "commenter_id",
+});
+
+User.hasMany(Comment, {
+  foreignKey: "commenter_id",
+  onDelete: "CASCADE",
+});
+
+module.exports = { User, CarReview, Comment };

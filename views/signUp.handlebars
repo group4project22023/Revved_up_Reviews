@@ -1,0 +1,63 @@
+{{!-- create handlebars form to be inserted into main --}}
+
+<form class="flex flex-col signup-form mb-[18.5vh] max-[426px]:mb-0">
+  
+<div
+  class="bg-white shadow-lg mt-20 self-center rounded-lg flex flex-col justify-center p-20 gap-5 max-[426px]:mt-0 max-[426px]:h-[77vh] max-[426px]:p-4 max-[426px]:w-[100vw] max-[426px]:shadow-none "
+>
+<p class="signIn flex justify-center content-start">Create Account</p>
+  <input
+  id="username-signup"
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="Username"
+    type="text"
+  />
+  <input
+  id="password-signup" 
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="Password"
+    type="password"
+  />
+  {{!-- <input
+    class="bg-slate-200 border rounded-lg p-2 mb-4 outline-none focus:border-b-black transition-[0.5s]"
+    placeholder="Confirm Password"
+    type="text"
+  /> --}}
+  <button
+  type="submit"
+    class="bg-gray-600 text-white rounded-lg p-2 hover:bg-green-400"
+  >Create Account</button>
+  <p class="text-center">Already have an account?
+    <a href="/login" class="text-blue-500 hover:text-blue-800">Login</a></p>
+</div>
+
+</form>
+
+
+
+
+
+<script src="./js/signUp.js"></script>
+
+
+
+{{!-- <div class="flex-row justify-content-center align-items-center" id="body">
+  <h2 class="signup">Sign Up</h2>
+
+  <form class="form signup-form">
+    <div class="form-group">
+      <input class="form-input" type="text" placeholder="Username" id="username-signup" />
+    </div>
+
+    <div class="form-group">
+      <input class="form-input" type="password" placeholder="Password" id="password-signup" />
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Signup</button>
+    </div>
+  </form>
+  <div>
+    <a href="/login">Login Instead</a>
+  </div>
+</div> --}}
