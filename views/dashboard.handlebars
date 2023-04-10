@@ -1,5 +1,5 @@
 
-<div class="bg-white w-[80%] self-center shadow-lg rounded-lg px-6 py-4">
+<div class="bg-white w-[80%] max-[426px]:w-[100%] max-[426px]:shadow-none self-center shadow-lg rounded-lg px-6 py-4">
   <div class="text-4xl font-semibold">
     <h2>Welcome, {{username}}!</h2>
 
@@ -13,7 +13,7 @@
       <h3 class="text-2xl">Create a new car review:</h3>
 
       <form class="form new-carReview-form flex flex-col gap-4">
-        <div class="form-group flex flex-row space-x-20 w-full self-center">
+        <div class="form-group flex flex-row max-[426px]:flex-col max-[426px]:gap-4 gap-8 w-full self-center">
           <input
             class="form-input text-[1.2rem] bg-[#f5f3f3] rounded-lg p-1 px-2 w-full"
             type="text"
@@ -72,9 +72,9 @@
         <h3 class="text-2xl">Current Car Reviews:</h3>
 
         {{#each carReviews as |carReview|}}
-          <div class="flex flex-row justify-between px-10 rounded-lg bg-[#f5f3f3] py-4">
+          <div class="flex flex-row max-[426px]:flex-col max-[426px]:text-ellipsis max-[426px]:gap-4 max-[426px]:items-center justify-between px-10 rounded-lg bg-[#f5f3f3] py-4">
             <div class="">
-              <p><a class="text-[1.7rem]"
+              <p><a class="text-[1.7rem] max-[426px]:text-[1.3rem]"
                   href="/carReview/{{carReview.id}}"
                 >{{carReview.title}}</a></p>
             </div>

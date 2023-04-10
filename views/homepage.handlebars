@@ -1,23 +1,17 @@
 {{! create handlebars review display to be inserted into main }}
 {{#each carReviews as |carReview|}}
-<div class ="flex flex-col w-full">
-  <div class="flex flex-col items-center px-6">
+<div class ="flex flex-col w-full max-[426px]:mt-5 max-[426px]:mb-1">
+  <div class="flex flex-col items-center px-6 max-[426px]:px-4">
 
-    <div class="px-4 w-[70%] bg-white mx-4 my-2 shadow-sm justify-between py-2 rounded-lg flex flex-col carReviewBox">
-			  <div class="font-semibold flex flex-row justify-between headerRow">
-            <div class="">
-            <h2>
+    <div class="px-4 w-[70%] max-[426px]:w-full bg-white mx-4 my-2 shadow-sm justify-between py-2 rounded-lg flex flex-col carReviewBox">
+			  <div class="font-semibold flex flex-row max-[426px]:flex-col max-[426px]:gap-2 gap-1 justify-between headerRow">
+            
             <a class="carReviewTitle" href="/carReview/{{id}}">{{carReview.title}}</a>
-            </h2>
-            </div>
-
-        <div class="">
-        
            <p>Make:
             {{carReview.carmake}};&nbsp;&nbsp; Model:
             {{carReview.carmodel}}
             </p>
-        </div>
+    
 			</div>
       <div class="border border-dashed mt-2"></div>
      <div class="mt-2 carReviewDesc">

@@ -12,12 +12,12 @@
     {{!-- <div class="flex-col flex justify-around"> --}}
 
       <nav
-        class="text-center flex flex-row justify-between px-10 py-8 text-white bg-slate-600 mb-5 text-lg font-bold"
+        class="text-center flex flex-row max-[426px]:flex-col max-[426px]:items-center justify-between px-10 max-[426px]:px-6 py-8 max-[426px]:py-4 text-white max-[426px]:gap-6 bg-slate-600 mb-5 max-[426px]:mb-0 text-lg font-bold"
       >
-        <h1 class="text-white navTitle">
+        <div class="text-white navTitle">
           <img src="/assets/images/logo.jpg" class="flex flex-row items-start w-16 h-16" alt="Revved Up Reviews Logo">
-          <a class="md:text-2xl" href="/">Revved Up Reviews!!</a>
-        </h1>
+          <a class="md:text-2xl max-[426px]:text-lg" href="/">Revved Up Reviews!!</a>
+        </div>
 
        
         {{! <button
@@ -32,10 +32,10 @@
             <span class="navbar-toggler-icon"></span>
           </button> }}
         <div class="self-center" id="navbarSupportedContent">
-          <ul class="flex flex-row gap-4 md:gap-1">
+          <ul class="flex flex-row gap-4 md:gap-1 max-[426px]:gap-1">
             <li class="">
               <a
-                  class="hover:bg-[#e6cb18] md:px-2 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                 aria-current="page"
                 href="/"
               >Home</a>
@@ -44,14 +44,14 @@
 
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
                   href="/dashboard"
                 >Dashboard</a>
               </li>
 
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   id="logout"
                 >Logout</a>
               </li>
@@ -59,14 +59,14 @@
             {{else}}
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/login"
                 >Login</a>
               </li>
 
               <li class="">
                 <a
-                  class= "md:px-2 hover:bg-[#e6cb18] cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class= "md:px-2 hover:bg-[#e6cb18] max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/signUp"
                 >Sign Up</a>
               </li>
@@ -81,7 +81,7 @@
         {{{body}}}
       </main>
     {{!-- </div> --}}
-      <footer class=" w-full py-6 text-center self-baseline bg-slate-800 text-white mt-4 bottom-0">
+      <footer class=" w-full py-6 text-center self-baseline bg-slate-800 text-white mt-4 max-[426px]:mt-0 bottom-0">
         Made with ❤ by TEAM-4
       </footer>
 
