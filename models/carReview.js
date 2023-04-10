@@ -16,7 +16,7 @@ CarReview.init(
       allowNull: false,
     },
     carReview: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10000),
       allowNull: false,
     },
     date_reviewcreated: {
