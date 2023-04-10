@@ -5,11 +5,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-![image](https://user-images.githubusercontent.com/100619060/231015246-dc5e941a-31b0-4ea3-8961-ac0215d560ca.png)
+
     <img src="" alt="Logo" width="200" height="200"> </public/assets/images/logo.jpg>
   </a>
 
   <h3 align="center">Revved Up Reviews</h3>
+  ![image](https://user-images.githubusercontent.com/100619060/231015449-5ae12304-5b02-40f8-8531-54f2cf333adb.png)
+![Uploading image.png…]()
+
 
   <p align="center">
     Revved Up Reviews: Ignite Your Passion for the Drive
