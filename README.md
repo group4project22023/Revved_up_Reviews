@@ -6,13 +6,9 @@
 <br />
 <div align="center">
 
-    <img src="" alt="Logo" width="200" height="200"> </public/assets/images/logo.jpg>
-  </a>
+  <img src="https://user-images.githubusercontent.com/118566376/231605826-ce41460f-a55d-4764-ae7d-981f3ff1346d.png" alt="Logo" width="200" height="200"> 
 
   <h3 align="center">Revved Up Reviews</h3>
-  ![image](https://user-images.githubusercontent.com/100619060/231015449-5ae12304-5b02-40f8-8531-54f2cf333adb.png)
-![Uploading image.png…]()
-
 
   <p align="center">
     Revved Up Reviews: Ignite Your Passion for the Drive
@@ -34,7 +30,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -63,11 +58,12 @@ Reved Up Reviews is a website that allows users to pose a review of any car they
 * CSS
 * JavaScript
 * [Node.js](https://nodejs.org/en/docs)
+* [Tailwind](https://tailwindcss.com/)
 * [Express.js](https://expressjs.com/)
 * [Express-session](https://www.npmjs.com/package/express-session)
 * [Express-handlebars]()
 * [Bcrypt]()
-* [Mysql2](https://www.npmjs.com/package/mysql2) <!-- TODO add technologies -->
+* [Mysql2](https://www.npmjs.com/package/mysql2)
 * [Sequelize](https://sequelize.org/)
 * [Connect-session-sequelize](https://www.npmjs.com/package/express-session)
 * [Dotenv]()
@@ -81,38 +77,23 @@ Reved Up Reviews is a website that allows users to pose a review of any car they
 <!-- GETTING STARTED -->
 ## Getting Started
 
-
-[Deployed Website]()<!-- TODO add website link-->
-
+[Deployed Website](https://revved-up-reviews.herokuapp.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-![]() <!-- TODO add video -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
-<!-- TODO update this -->
 - [x] Implement Node.js and Express.js to create a RESTful API
 - [x] Interactive (i.e: accept and respond to user input)
 - [x] Implement MySQL and the Sequelize ORM for the database
 - [x] Implement GET and POST routes to manipulate data
-- [] Use a new library/package not discussed in class
 - [x] MVC file structure
 - [x] Implement user authentication
 - [x] Protect sensitive data using environment variables
-- [] Polished UI
+- [x] Polished UI
 - [x] Clean repository that meets quality coding standards
 - [x] Quality README
-- [] Deployed to Heroku
+- [x] Deployed to Heroku
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -120,22 +101,16 @@ Reved Up Reviews is a website that allows users to pose a review of any car they
 
 <!-- CONTRIBUTING -->
 ## Contributing
-![contributing]() <!-- TODO add contributing link -->
-### Tasks and Roles 
-Sotirios Chortogiannos
-> <!-- TODO add role -->
----
-Terry 
-> <!-- TODO add role -->
---- 
-Jackson Rainbird-Kendrick
-> <!-- TODO add role -->
----
-Jacob MacDonald
-> <!-- TODO add role -->
----
-Yingge Hu
-> <!-- TODO add role -->
+
+- Sotirios Chortogiannos
+
+- Terry 
+
+- Jackson Rainbird-Kendrick
+
+- Jacob MacDonald
+
+- Yingge Hu
 
 
 
