@@ -24,6 +24,13 @@ body {
   border-style: solid;
 }
 
+.comments-word {
+  background-color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+
 /* .carReviewTitle {
   text-decoration: initial;
   color: rgb(238, 104, 55);
@@ -132,4 +139,46 @@ a:hover {
 #body{
   justify-content: center;
   align-items: center;
+}
+
+#carReview{
+  margin-top: 10px;
+}
+
+.menu-open {
+  overflow: hidden;
+}
+
+.animated-bg {
+  background: linear-gradient(270deg, #cf2560, #6412b1, #220bb5);
+  background-size: 200% 200%;
+  animation: animatedBackground 30s ease-in-out infinite;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.searchText{
+  font-size: 20px;
+  font-weight: bolder;
+  justify-self: center;
+  flex-basis: auto;
+}
+
+.car-review-container {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-review-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 18px rgba(0, 0, 0, 0.2);
 }

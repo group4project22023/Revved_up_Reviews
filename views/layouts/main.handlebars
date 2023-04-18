@@ -1,41 +1,50 @@
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Revved Up Reviews</title>
-    <link rel="stylesheet" href="/css/style.css" /> 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revved Up Reviews</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .menu-open {
+    overflow: hidden;
+  }
+</style>
+<style>
+  .menu-open {
+    overflow: hidden;
+  }
 
-  <body class="bg-[#f5f3f3]">
-    {{!-- <div class="flex-col flex justify-around"> --}}
+  @keyframes animatedBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
+</head>
 
-      <nav
-        class="text-center flex flex-row max-[426px]:flex-col max-[426px]:items-center justify-between px-10 max-[426px]:px-6 py-8 max-[426px]:py-4 text-white max-[426px]:gap-6 bg-slate-600 mb-5 max-[426px]:mb-0 text-lg font-bold"
-      >
-        <div class="text-white navTitle">
-          <img src="/assets/images/logo.jpg" class="flex flex-row items-start w-16 h-16" alt="Revved Up Reviews Logo">
-          <a class="md:text-2xl max-[426px]:text-lg" href="/">Revved Up Reviews!!</a>
-        </div>
-
-       
-        {{! <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button> }}
-        <div class="self-center" id="navbarSupportedContent">
-          <ul class="flex flex-row gap-4 md:gap-1 max-[426px]:gap-1">
+<body class="bg-[#f5f3f3] flex flex-col min-h-screen animated-bg">
+  
+  <nav class="bg-slate-600">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="text-white navTitle">
+        <img src="/assets/images/logo.jpg" class="flex flex-row items-start w-16 h-16" alt="Revved Up Reviews Logo">
+        <a class="md:text-2xl text-lg" href="/">Revved Up Reviews!!</a>
+      </div>
+      <div class="hidden md:flex">
+        <ul class="flex flex-row gap-4 md:gap-1">
             <li class="">
               <a
-                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                 aria-current="page"
                 href="/"
               >Home</a>
@@ -44,14 +53,14 @@
 
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
                   href="/dashboard"
                 >Dashboard</a>
               </li>
 
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   id="logout"
                 >Logout</a>
               </li>
@@ -59,36 +68,120 @@
             {{else}}
               <li class="">
                 <a
-                  class="hover:bg-[#e6cb18] md:px-2 max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/login"
                 >Login</a>
               </li>
 
               <li class="">
                 <a
-                  class= "md:px-2 hover:bg-[#e6cb18] max-[426px]:px-1 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  class= "md:px-2 hover:bg-[#e6cb18] cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
                   href="/signUp"
                 >Sign Up</a>
               </li>
             {{/if}}
 
           </ul>
-        </div>
-      </nav>
+        </ul>
+      </div>
+      <button id="hamburger" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden w-full hidden">
+    <ul class="flex flex-col gap-4 p-4 bg-slate-600">
+      <li class="">
+              <a
+                  class="hover:bg-[#e6cb18] md:px-2 hover:cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                aria-current="page"
+                href="/"
+              >Home</a>
+            </li>
+            {{#if logged_in}}
+
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 active:bg-[#BD4F6C] text-[rgb(43,204,225)] px-6 py-1 rounded-lg"
+                  href="/dashboard"
+                >Dashboard</a>
+              </li>
+
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  id="logout"
+                >Logout</a>
+              </li>
+
+            {{else}}
+              <li class="">
+                <a
+                  class="hover:bg-[#e6cb18] md:px-2 cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/login"
+                >Login</a>
+              </li>
+
+              <li class="">
+                <a
+                  class= "md:px-2 hover:bg-[#e6cb18] cursor-pointer text-[rgb(43,204,225)] active:bg-[#BD4F6C] px-6 py-1 rounded-lg"
+                  href="/signUp"
+                >Sign Up</a>
+              </li>
+            {{/if}}
+
+          </ul>
+  </div>
+</nav>
 
 
-      <main class="flex flex-col">
-        {{{body}}}
-      </main>
-    {{!-- </div> --}}
-      <footer class=" w-full py-6 text-center self-baseline bg-slate-800 text-white mt-4 max-[426px]:mt-0 bottom-0">
-        Made with ❤ by TEAM-4
-      </footer>
+
+<div class="flex-grow">
+  <form class="flex flex-box justify-center large-input py-6" action="/search" method="get">
+  <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+  <input class="block w-half p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="q" placeholder="Search reviews...">
+  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+</form>
+
+
+     <main class="flex flex-col">
+      {{{body}}}
+    </main>
+  </div>
+    
 
 
     {{#if logged_in}}
+
       <script src="/js/logout.js"></script>
     {{/if}}
-  </body>
+
+    <footer class="w-full py-6 text-center bg-slate-800 text-white">
+    Made with ❤ by TEAM-4
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const body = document.body;
+
+    hamburger.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+      body.classList.toggle("menu-open");
+    });
+  });
+</script>
+</body>
 
 </html>
+
+
+
+
+
+
+

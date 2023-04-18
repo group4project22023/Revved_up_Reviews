@@ -2,6 +2,9 @@ const router = require("express").Router();
 const { User, CarReview, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 const carData = require("../utils/carData.js")
+const { Op } = require("sequelize");
+const searchArray = require('search-array');
+
 // This route will display all posts on homepage
 
 router.get("/", async (req, res) => {
@@ -197,3 +200,71 @@ router.get("/signUp", (req, res) => {
 });
 
 module.exports = router;
+
+// Search route
+// router.get("/search", withAuth, async (req, res) => {
+//   try {
+//     const searchTerm = req.query.q;
+
+//     const carReviewData = await CarReview.findAll({
+//       where: {
+//         title: {
+//           [Op.substring]: searchTerm,
+//         },
+//       },
+//       order: [["date_reviewcreated", "DESC"]],
+//       include: [
+//         {
+//           model: User,
+//           as: "creator",
+//         },
+//       ],
+//     });
+
+//     const carReviews = carReviewData.map((carReview) =>
+//       carReview.get({
+//         plain: true,
+//       })
+//     );
+
+//     res.render("searchResults", {
+//       carReviews,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/search', async (req, res) => {
+  try {
+    const carReviewData = await CarReview.findAll({
+      order: [['date_reviewcreated', 'DESC']],
+      include: [
+        {
+          model: User,
+          as: 'creator',
+        },
+      ],
+    });
+
+    const carReviews = carReviewData.map((carReview) => carReview.get({ plain: true }));
+
+    // Get the search query from the request
+    const query = req.query.q;
+
+    // Filter carReviews based on the search query for carmake or carmodel
+    const searchResult = carReviews.filter((review) =>
+      review.carmake.toLowerCase().includes(query.toLowerCase()) ||
+      review.carmodel.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Render the search results
+    res.render('searchResults', {
+      searchResult,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});

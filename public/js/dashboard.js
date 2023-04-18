@@ -45,6 +45,7 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/dashboard");
+      alert("Success!! Car review created.")
     } else {
       alert("Failed to create CarReview");
     }

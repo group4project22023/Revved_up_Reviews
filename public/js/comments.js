@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (response.ok) {
       document.location.reload();
+      alert("Comment posted successfully!")
     } else {
       alert("Failed to create comment");
     }
